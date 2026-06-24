@@ -119,17 +119,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</nav>
 			<ul class="auth_menu_list_pc list-unstyled flex justify-end hidden-xs hidden-sm">
 					<li class="">
-		<a href="#" class="btn-auth-header">
+		<a href="/dashboard" class="btn-auth-header">
 			<span>
-				<i class="fas fa-user-plus"></i>
-				SIGN UP
+				<i class="fas fa-user-circle"></i>
+				MYPAGE
 			</span>
 </a>	</li>
 	<li class="">
-		<a href="#" class="btn-auth-header">
+		<a href="/signout" class="btn-auth-header">
 			<span>
-				<i class="fas fa-sign-in-alt"></i>
-				LOGIN
+				<i class="fas fa-sign-out-alt"></i>
+				LOGOUT
 			</span>
 </a>	</li>
 
@@ -170,17 +170,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</h2>
 			<ul class="auth-menu-list list-unstyled flex justify-center align-center">
 					<li class="">
-		<a href="#" class="btn-auth-member">
+		<a href="/dashboard" class="btn-auth-member">
 			<span>
-				<i class="fas fa-user-plus"></i>
-				SIGN UP
+				<i class="fas fa-user-circle"></i>
+				MYPAGE
 			</span>
 </a>	</li>
 	<li class="">
-		<a href="#" class="btn-auth-member">
+		<a href="/signout" class="btn-auth-member">
 			<span>
-				<i class="fas fa-sign-in-alt"></i>
-				LOGIN
+				<i class="fas fa-sign-out-alt"></i>
+				LOGOUT
 			</span>
 </a>	</li>
 
@@ -250,13 +250,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="panel-heading">
 		<h2 class="panel-title">ログイン</h2>
 	</div>
-	<form accept-charset="UTF-8" action="/users/sign_in" class="new_user" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="mF/EtyGYyHRIvfED3i3p9nLgeygm5+GJLoVIWlBftuE=" /></div>
+	<form accept-charset="UTF-8" action="/users/sign_in" class="new_user" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Tqvsus/rW9lOhVtxyNeuh9VjOXcdROReSCFikvaxkzk=" /></div>
 		<div class="panel-body">
 			<div class="lead-text">
 				<p>すでにHORIPRO IDのアカウントを取得頂いているユーザー様は以下のフォームより「メールアドレス」「パスワード」をご入力のうえ、サイトにログインして下さい。</p>
 			</div>
 			<div class="form-group">
-				<label for="user_login">メールアドレス</label>
+				<label for="user_LOGOUT">メールアドレス</label>
 				<input autofocus="autofocus" class="form-control" id="user_login" name="user[login]" size="30" type="text" />
 			</div>
 			<div class="form-group">
@@ -277,7 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="panel-heading">
 		<h2 class="panel-title">新規アカウント登録</h2>
 	</div>
-	<form accept-charset="UTF-8" action="/users" class="recaptcha" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="mF/EtyGYyHRIvfED3i3p9nLgeygm5+GJLoVIWlBftuE=" /></div>
+	<form accept-charset="UTF-8" action="/users" class="recaptcha" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Tqvsus/rW9lOhVtxyNeuh9VjOXcdROReSCFikvaxkzk=" /></div>
 		
 		<div class="panel-body">
 			<p>HORIPRO IDを未取得のユーザー様は以下のフォームより「メールアドレス」「パスワード」をご入力のうえ、新規アカウントのご登録(無料)をお願い致します。</p>

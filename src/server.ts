@@ -56,7 +56,24 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
   }
 
   const url = req.url || '/';
-  const urlPath = url.split('?')[0]; // Strip query params
+  const [urlPath, queryString] = url.split('?');
+
+  // ── Handle ?page=N pagination → serve _page_N.html ──
+  if (queryString) {
+    const pageMatch = queryString.match(/^page=(\d+)$/);
+    if (pageMatch) {
+      const pagedPath = `${urlPath}_page_${pageMatch[1]}`;
+      const pagedFile = resolvePath(pagedPath);
+      if (pagedFile) {
+        res.writeHead(200, {
+          'Content-Type': lookup(extname(pagedFile).toLowerCase()),
+          'Cache-Control': 'public, max-age=3600',
+        });
+        createReadStream(pagedFile).pipe(res);
+        return;
+      }
+    }
+  }
 
   // ── Calendar AJAX → return JSON events ──
   if ((urlPath === '/calendar' || urlPath === '/contents_calendar') && isAjaxRequest(req) && calendarEvents) {
