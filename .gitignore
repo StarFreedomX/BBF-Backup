@@ -1,0 +1,10 @@
+/pnpm-lock.yaml
+/dist/
+/node_modules/
+
+*.mp4
+public/gallery_photos
+public/s3
+/public/s3/
+/public/videos/
+/public/cloudfront/

@@ -1,0 +1,21 @@
+{
+  "name": "bbf-archive",
+  "version": "1.0.0",
+  "description": "Ayaka Ohashi Official Website (ohashiayaka.com) — Complete Offline Archive",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "dev-watch": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0"
+  }
+}
