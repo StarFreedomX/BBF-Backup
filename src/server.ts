@@ -93,8 +93,10 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
     const fileSize = stat.size;
     const range = req.headers.range;
 
+    const isHtml = ext === '.html';
+    const cacheControl = isHtml ? 'no-cache' : 'public, max-age=86400';
+
     if (range) {
-      // Parse Range: "bytes=start-end"
       const parts = range.replace(/bytes=/, '').split('-');
       const start = parseInt(parts[0], 10);
       const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
@@ -105,7 +107,7 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
         'Accept-Ranges': 'bytes',
         'Content-Length': chunkSize,
         'Content-Type': lookup(ext),
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': cacheControl,
       });
       createReadStream(filePath, { start, end }).pipe(res);
     } else {
@@ -113,7 +115,7 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
         'Content-Type': lookup(ext),
         'Content-Length': fileSize,
         'Accept-Ranges': 'bytes',
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': cacheControl,
       });
       createReadStream(filePath).pipe(res);
     }
