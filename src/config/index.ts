@@ -8,6 +8,9 @@ export const config = {
   /** Server port */
   port: Number(process.env.PORT) || 3456,
 
+  /** Dev mode (BBF_DEV=true or NODE_ENV=development) */
+  isDev: process.env.BBF_DEV === 'true' || process.env.NODE_ENV === 'development',
+
   /** Root directory of the project */
   rootDir: ROOT,
 

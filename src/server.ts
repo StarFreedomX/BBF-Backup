@@ -1,7 +1,7 @@
 /**
  * BBF Archive Server — ohashiayaka.com offline mirror
  */
-import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
+import { createServer, request as httpRequest, type IncomingMessage, type ServerResponse } from 'node:http';
 import { existsSync, statSync, createReadStream, readFileSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { config } from './config/index.js';
@@ -49,6 +49,36 @@ function isAjaxRequest(req: IncomingMessage): boolean {
   return accept.includes('application/json') || xrw === 'XMLHttpRequest';
 }
 
+// ── AList proxy for video files ──
+const ALIST_HOST = '10.66.66.6';
+const ALIST_PORT = 5244;
+
+function proxyToAlist(req: IncomingMessage, res: ServerResponse): void {
+  const options = {
+    hostname: ALIST_HOST,
+    port: ALIST_PORT,
+    path: req.url,
+    method: req.method,
+    headers: {
+      ...req.headers,
+      host: `${ALIST_HOST}:${ALIST_PORT}`,
+    },
+  };
+
+  const proxy = httpRequest(options, (proxyRes) => {
+    res.writeHead(proxyRes.statusCode || 200, proxyRes.headers);
+    proxyRes.pipe(res);
+  });
+
+  proxy.on('error', (err) => {
+    console.error(`  [proxy] ${req.url} → ${err.message}`);
+    res.writeHead(502);
+    res.end('Bad Gateway');
+  });
+
+  req.pipe(proxy);
+}
+
 /** Main request handler */
 function handleRequest(req: IncomingMessage, res: ServerResponse): void {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
@@ -57,6 +87,12 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
 
   const url = req.url || '/';
   const [urlPath, queryString] = url.split('?');
+
+  // ── Proxy /d/ → AList (dev only, production uses nginx) ──
+  if (config.isDev && urlPath.startsWith('/d/')) {
+    proxyToAlist(req, res);
+    return;
+  }
 
   // ── Handle ?page=N pagination → serve _page_N.html ──
   if (queryString) {
@@ -130,5 +166,7 @@ function handleRequest(req: IncomingMessage, res: ServerResponse): void {
 const server = createServer(handleRequest);
 server.listen(port, () => {
   console.log(`\n  BBF Archive Server`);
-  console.log(`  http://localhost:${port}\n`);
+  console.log(`  http://localhost:${port}`);
+  if (config.isDev) console.log(`  [dev] /d/ → AList ${ALIST_HOST}:${ALIST_PORT}`);
+  console.log();
 });
