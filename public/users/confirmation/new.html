@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MZMM5BQ');</script>
 		<meta charset="utf-8">
-		<title>新規会員登録 | 大橋彩香公式サイト</title>
+		<title>登録確認メール再送信 | 大橋彩香公式サイト</title>
 		<meta name="pinterest" content="nopin" description="申し訳ございません。ピンを保存することはお断りしております。" />
 		<meta name="description" content="声優・アーティスト“大橋彩香&quot;のオフィシャルウェブサイトです。アーティストプロフィール、ライブ、リリース情報、作品紹介など最新情報を更新中。">
 		<meta name="keywords" content="大橋彩香,おおはしあやか,へごちん,へご,へごちゃん,はっしー,島村卯月">
@@ -31,10 +31,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="twitter:creator" content="@ayakaohashi">
 	<meta property="fb:app_id" content="168628383780369">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="/signup">
-	<meta name="twitter:url" content="/signup">
-	<meta property="og:title" content="新規会員登録 | 大橋彩香公式サイト">
-	<meta name="twitter:title" content="新規会員登録 | 大橋彩香公式サイト">
+	<meta property="og:url" content="/users/confirmation/new">
+	<meta name="twitter:url" content="/users/confirmation/new">
+	<meta property="og:title" content="登録確認メール再送信 | 大橋彩香公式サイト">
+	<meta name="twitter:title" content="登録確認メール再送信 | 大橋彩香公式サイト">
 	<meta property="og:description" content="声優・アーティスト“大橋彩香&quot;のオフィシャルウェブサイトです。アーティストプロフィール、ライブ、リリース情報、作品紹介など最新情報を更新中。">
 	<meta name="twitter:description" content="声優・アーティスト“大橋彩香&quot;のオフィシャルウェブサイトです。アーティストプロフィール、ライブ、リリース情報、作品紹介など最新情報を更新中。">
 
@@ -42,7 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<link rel="apple-touch-icon-precomposed" href="/assets/ohashiayaka/apple-touch-icon.png" type="image/png" />
 		<link rel="apple-touch-icon" href="/assets/ohashiayaka/apple-touch-icon.png" />
 	</head>
-	<body id="registrations" class="new ">
+	<body id="confirmations" class="new ">
 
 			
 
@@ -234,57 +234,74 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="container">
 							<section class="show-details">
 	<div class="corner-header">
-		<h2 class="corner-title title-japanese">新規会員登録</h2>
+		<h2 class="corner-title title-japanese">登録確認メール再送信</h2>
 		<div class="historyback">
 	<a href="#" onclick="history.back(); return false;"><i class="fa fa-caret-left"></i> Back</a>
 </div>
 
 	</div>
-	<div class="details">
-		<section class="panel panel-default">
+	<div class="details corner-details">
+		<div class="panel panel-default">
+			<form accept-charset="UTF-8" action="/users/confirmation" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="99AieRXY+ebTCubaQ8SdGQ3Kd9C6MmpmTDkYCuWV+6k=" /></div>
+				<div class="panel-body">
+					<p>新規登録の時にご入力いただいたメールアドレスをもう一度入力してください。</p>
+					<div class="form-group">
+						<label class="control-label" for="user_email">メールアドレス</label>
+						<input autofocus="autofocus" class="form-control" id="user_email" name="user[email]" size="30" type="email" value="" />
+						<input id="checked" name="checked" type="hidden" />
+					</div>
+				</div>
+				<div class="panel-footer clearfix">
+					<div class="pull-right">
+						<input class="btn btn-primary" name="commit" type="submit" value="登録確認メールを再送信する">
+					</div>
+				</div>
+</form>		</div>
+		<div class="panel panel-default panel-mail">
 	<div class="panel-heading">
-		<h2 class="panel-title">新規アカウント登録</h2>
+		<h2 class="panel-title">ドメイン指定受信と迷惑メール設定のご確認のお願い</h2>
 	</div>
-	<form accept-charset="UTF-8" action="/users" class="recaptcha" data-remote="true" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="VE3Lg6coONOyZ7GLCYusVrGEhVW7n/vw7GbFzv6PoRk=" /></div>
-		
-		<div class="panel-body">
-			<p>HORIPRO IDを未取得のユーザー様は以下のフォームより「メールアドレス」「パスワード」をご入力のうえ、新規アカウントのご登録(無料)をお願い致します。</p>
-			<p><i class="fa fa-question-circle"></i> <a href="/about/account">HORIPRO IDとは？</a></p>
-			<div class="form-group">
-				<label for="user_email" class="control-label">メールアドレス</label>
-				<div>
-					<input class="form-control" id="user_email" name="user[email]" size="30" type="email" value="" />
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="user_password" class="control-label">パスワード<small>(8文字以上128文字以下)</small></label>
-				<div>
-					<input class="form-control" id="user_password" name="user[password]" size="30" type="password" />
-				</div>
-			</div>
-			<div class="form-group accept-terms">
-				<div class="checkbox">
-					<input name="user[accept]" type="hidden" value="0" /><input id="user_accept" name="user[accept]" type="checkbox" value="1" />
-					<a href="/about/terms" target="_blank">利用規約</a>に同意する
-				</div>
-			</div>
-			<div class="alert alert-danger">
-				<p>新規アカウント登録ボタンを押下頂きますと、ご入力頂いたメールアドレス宛に登録確認メールをお送り致します。</p>
-				<p>登録確認メールなどの未着回避のため、一時的に迷惑メールフィルターを解除する、または「ohashiayaka.com」からのメールを受信できるように設定頂いてからお手続きを開始してください。</p>
-			</div>
-		</div>
-		<div class="panel-footer">
-			<a href="/signup/finish" class="btn btn-primary btn-block">新規アカウント登録（無料）</a>
-		</div>
-</form></section>
+	<div class="panel-body">
+		<p>登録確認メールが届かないと登録手続きが行えません。<br>登録確認メールが届かない場合は以下をお試しください。</p>
 
-		<div class="alert alert-warning">
-			<p>登録情報を入力後に登録確認メールが届いていない場合には、<a href="/users/confirmation/new">登録確認メールの再送信</a>を行ってください。</p>
-		</div>
+		<section class="well well-sm">
+			<h3 class="well-title title">docomoのユーザー様</h3>
+			<ol class="list-unstyled">
+				<li><strong>1.</strong> メール設定 → 詳細設定/解除 → 受信/拒否設定 → 受信設定 → 個別に受信したいドメインまたはアドレスの入力欄に｢ohashiayaka.com｣を入力 → 登録</li>
+			</ol>
+		</section>
 
-		<div class="alert bg-info">
-			<p><a href="/dashboard">ご登録済みの方はこちらからログイン</a></p>
-		</div>
+		<section class="well well-sm">
+			<h3 class="well-title title">auのユーザー様</h3>
+			<ol class="list-unstyled">
+				<li><strong>1.</strong> au oneトップ → auお客様サポート → 迷惑メールでお困りのお客様はこちら → 迷惑メールフィルター設定へ → 迷惑メールフィルター → 指定受信リスト設定 → 有効/リスト編集する → 指定受信リスト設定の入力欄に｢ohashiayaka.com｣を入力 → 登録</li>
+				<li><strong>2.</strong> au oneトップ → auお客様サポート → 迷惑メールでお困りのお客様はこちら → 迷惑メールフィルター設定へ → 迷惑メールフィルター → 指定受信リスト設定 → なりすまし・転送メール許可 →登録数の入力欄に｢ohashiayaka.com｣を入力 → 登録</li>
+				<li><strong>3.</strong> au oneトップ → auお客様サポート → 迷惑メールでお困りのお客様はこちら → 迷惑メールフィルター設定へ → 迷惑メールフィルター→ 個別設定【なりすまし規制】設定が(高)か(中)に設定されている場合は､設定を(低)に変更するか､設定しないに変更ください。</li>
+			</ol>
+		</section>
+
+		<section class="well well-sm">
+			<h3 class="well-title title">SoftBankのユーザー様</h3>
+			<ol class="list-unstyled">
+				<li><strong>1.</strong> メールボタン → メール/PCメール設定 → メール・アドレス設定 → 迷惑・メールブロック設定 → 個別設定 → 受信拒否・拒否設定 → アドレスの入力欄に｢ohashiayaka.com｣を入力 → 後方一致を選択 → 登録</li>
+			</ol>
+		</section>
+
+		<section class="well well-sm">
+			<h3 class="well-title title">WEBメールをご利用のユーザー様</h3>
+			<ol class="list-unstyled">
+				<li><strong>1.</strong> 迷惑メールフォルダにメールが届いている場合がございます。恐れ入りますが、迷惑メールフォルダもご確認下さい。</li>
+			</ol>
+		</section>
+	</div>
+</div>
+		<section class="well">
+			<h3 class="well-title title">ドメイン指定受信と迷惑メール設定のご確認のお願い</h3>
+			<p>再送信を行ってもメールが届かない場合には、<a href="/help">ヘルプ</a>をご参照ください。</p>
+			<p>自動的に迷惑メールフィルタで迷惑メールとして別フォルダに振り分けられている場合があります。</p>
+			<p>当サイトのメールは<span>ohashiayaka.com</span>ドメインより送信いたしますので、受信制限設定をされている場合は、ドメイン「ohashiayaka.com」のメールが受信できるように設定後、改めてお試しください。</p>
+			<p>ご入力いただいたメールアドレスが間違っていたと予想される場合は、登録手続きを最初からやり直してください。</p>
+		</section>
 	</div>
 </section>
 
